@@ -1,4 +1,4 @@
-package com.gogeteat.dto;
+package com.gogeteat.api.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

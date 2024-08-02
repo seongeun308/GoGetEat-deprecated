@@ -1,23 +1,23 @@
-package com.gogeteat.controller;
+package com.gogeteat.api.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.gogeteat.dto.StoreRequestBodyDto;
-import com.gogeteat.service.StoreApiService;
+import com.gogeteat.api.dto.StoreRequestBodyDto;
+import com.gogeteat.api.service.ApiService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 @Slf4j
-public class homeController {
+public class ApiController {
 
-    private final StoreApiService storeAPIService;
+    private final ApiService storeAPIService;
 
-    @PostMapping
+    @PostMapping("/store")
     public ArrayNode getStoreInfo(@RequestBody StoreRequestBodyDto bodyDto) {
         boolean is_end;
         int page = 1;
